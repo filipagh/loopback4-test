@@ -1,5 +1,5 @@
 import {Entity, model, property, hasMany} from '@loopback/repository';
-import {Item} from './item.model';
+import {Item, ItemWithRelations} from './item.model';
 
 @model()
 export class ShopNote extends Entity {
@@ -26,6 +26,7 @@ export class ShopNote extends Entity {
 
 export interface ShopNoteRelations {
   // describe navigational properties here
+  items?: ItemWithRelations[];
 }
 
 export type ShopNoteWithRelations = ShopNote & ShopNoteRelations;

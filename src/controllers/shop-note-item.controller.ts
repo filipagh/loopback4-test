@@ -60,8 +60,7 @@ export class ShopNoteItemController {
         'application/json': {
           schema: getModelSchemaRef(Item, {
             title: 'NewItemInShopNote',
-            exclude: ['id'],
-            optional: ['shopNoteId']
+            exclude: ['id', "shopNoteId"],
           }),
         },
       },
@@ -70,28 +69,28 @@ export class ShopNoteItemController {
     return this.shopNoteRepository.items(id).create(item);
   }
 
-  @patch('/shop-notes/{id}/items', {
-    responses: {
-      '200': {
-        description: 'ShopNote.Item PATCH success count',
-        content: {'application/json': {schema: CountSchema}},
-      },
-    },
-  })
-  async patch(
-    @param.path.number('id') id: number,
-    @requestBody({
-      content: {
-        'application/json': {
-          schema: getModelSchemaRef(Item, {partial: true}),
-        },
-      },
-    })
-    item: Partial<Item>,
-    @param.query.object('where', getWhereSchemaFor(Item)) where?: Where<Item>,
-  ): Promise<Count> {
-    return this.shopNoteRepository.items(id).patch(item, where);
-  }
+  // @patch('/shop-notes/{id}/items', {
+  //   responses: {
+  //     '200': {
+  //       description: 'ShopNote.Item PATCH success count',
+  //       content: {'application/json': {schema: CountSchema}},
+  //     },
+  //   },
+  // })
+  // async patch(
+  //   @param.path.number('id') id: number,
+  //   @requestBody({
+  //     content: {
+  //       'application/json': {
+  //         schema: getModelSchemaRef(Item, {partial: true}),
+  //       },
+  //     },
+  //   })
+  //   item: Partial<Item>,
+  //   @param.query.object('where', getWhereSchemaFor(Item)) where?: Where<Item>,
+  // ): Promise<Count> {
+  //   return this.shopNoteRepository.items(id).patch(item, where);
+  // }
 
   @del('/shop-notes/{id}/items', {
     responses: {
