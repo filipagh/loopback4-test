@@ -1,4 +1,4 @@
-#pravidla
+# pravidla
 ako 1. si prejdite tutorial
  
  https://loopback.io/doc/en/lb4/todo-tutorial.html
@@ -7,7 +7,7 @@ ako 1. si prejdite tutorial
 na kazdy task si spravte, vlastnu branche,
 a nakoniec spravte PullRequest, ja to automaticky dostanem na review 
 
-#DB model Product
+# DB model Product
 oddelit nazov od Items a mat zvlast (enum) tabulku produktov
 
 vytvorit model Product
@@ -22,7 +22,7 @@ o db migracie dat sa nestarajte, len nech mate nakonci spravnu DB strukturu,
 pouzite daku sql db idealne, ale mozete aj daco ine
 
 
-#Api Endpoint 
+# Api Endpoint 
 items/{id}/count/{count}
 alebo inu impl, necham na vas
 
